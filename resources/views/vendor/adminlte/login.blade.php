@@ -20,9 +20,9 @@
                 {!! csrf_field() !!}
 
                 <div class="form-group has-feedback {{ $errors->has('username') ? 'has-error' : '' }}">
-                    <input type="email" name="username" class="form-control" value="{{ old('username') }}"
+                    <input type="text" name="username" class="form-control" value="{{ old('username') }}"
                            placeholder="{{ trans('adminlte::adminlte.full_name') }}">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     @if ($errors->has('username'))
                         <span class="help-block">
                             <strong>{{ $errors->first('username') }}</strong>
