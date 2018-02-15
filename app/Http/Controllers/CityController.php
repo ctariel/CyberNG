@@ -14,7 +14,7 @@ class CityController extends Controller
      */
     public function index()
     {
-        $cities = City::all();
+        $cities = City::orderBy('country')->orderBy('name')->get();
 
         return view('admin/cities/index', compact('cities'));
     }

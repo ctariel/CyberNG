@@ -34,13 +34,13 @@ class AppServiceProvider extends ServiceProvider
                         'icon' => 'cloud'
                     ],
                     [
-                        'text' => 'Espace',
-                        'url'  => 'admin/espaces',
+                        'text' =>  __('admin.menu.spaces'),
+                        'url'  => 'admin/spaces',
                         'icon' => 'home'
                     ],
                     [
-                        'text' => 'salles',
-                        'url'  => 'admin/salles',
+                        'text' => __('admin.menu.rooms'),
+                        'url'  => 'admin/rooms',
                         'icon' => 'square'
                     ],
                     [

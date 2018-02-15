@@ -23,4 +23,6 @@ Route::get('admin/cities/{city}/destroy', 'CityController@destroy')->name('citie
 
 
 
-Route::get('admin/espaces', 'EspacesController@index');
+Route::get('admin/spaces', 'SpaceController@index')->name('spaces.index');
+Route::get('admin/spaces/create', 'SpaceController@create')->name('spaces.create');
+Route::post('admin/spaces', 'SpaceController@store')->name('spaces.store');

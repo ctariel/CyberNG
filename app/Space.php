@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class Space extends Model
 {
     //
     protected $guarded = [];
 
-    public function spaces() {
-        return $this->hasMany(Space::class);
+    public function city() {
+        return $this->belongsTo(City::class);
     }
 }

@@ -3,14 +3,14 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header ">
-                <h3 class="box-title">Paramétrages</h3>
+                <h3 class="box-title">@lang('admin.menu.configuration')</h3>
                 <div class="box-tools pull-right"><button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button> </div>
             </div>
 
             <div class="box-body">
 
-                <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="/admin/cities"><i class="fa fa-hospital-o"></i> VILLES</a>
-                <a class="btn btn-app @if (Route::currentRouteName() == '.index') disabled @endif" href="index.php?a=43"><i class="fa fa-home"></i> EPN</a>
+                <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="/admin/cities"><i class="fa fa-cloud"></i> {{strtoupper (__('admin.cities.cities')) }}</a>
+                <a class="btn btn-app @if (Route::currentRouteName() == 'spaces.index' || Route::currentRouteName() == 'spaces.create') disabled @endif" href="/admin/spaces"><i class="fa fa-home"></i> {{strtoupper (__('admin.spaces.spaces')) }}</a>
                 <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="index.php?a=44"><i class="fa fa-square"></i> SALLES</a>
                 <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="index.php?a=42"><i class="fa fa-clock-o"></i> HORAIRES</a>
                 <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="index.php?a=47"><i class="fa fa-eur"></i> TARIFS</a>
