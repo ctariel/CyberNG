@@ -34,4 +34,5 @@ return [
     'spaces.noSpacesYet' => 'Pas d\'espaces encore !',
     'spaces.createSpace' => 'Créer un espace',
     'spaces.cancel'      => 'Annuler',
+    'spaces.modify'      => 'Modifier l\'espace',
 ];

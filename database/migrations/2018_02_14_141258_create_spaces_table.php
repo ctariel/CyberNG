@@ -17,7 +17,7 @@ class CreateSpacesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
-            $table->string('nom');
+            $table->string('name');
             $table->text('address');
             $table->string('phoneNumber');
             $table->string('logo');
