@@ -16,13 +16,14 @@ class CreateSpacesTable extends Migration
         Schema::create('spaces', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('city_id');
-            $table->foreign('city_id')->references('id')->on('cities');
             $table->string('name');
-            $table->text('address');
-            $table->string('phoneNumber');
-            $table->string('logo');
+            $table->text('address')->nullable();
+            $table->string('phoneNumber')->nullable();
+            $table->string('logo')->nullable();
             $table->string('email')->unique();
             $table->timestamps();
+
+            $table->foreign('city_id')->references('id')->on('cities');
         });
     }
 

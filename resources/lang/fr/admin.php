@@ -32,7 +32,8 @@ return [
     'spaces.city'        => 'Ville',
     'spaces.mail'        => 'Mail',
     'spaces.noSpacesYet' => 'Pas d\'espaces encore !',
-    'spaces.createSpace' => 'Créer un espace',
+    'spaces.create'      => 'Créer un espace',
     'spaces.cancel'      => 'Annuler',
     'spaces.modify'      => 'Modifier l\'espace',
+    'spaces.phone'       => 'Téléphone'
 ];

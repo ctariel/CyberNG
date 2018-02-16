@@ -40,7 +40,18 @@ class SpaceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'city_id'     => 'required|integer',
+            'name'        => 'required|unique:spaces|max:255',
+            'address'     => 'nullable',
+            'phoneNumber' => 'nullable',
+            'logo'        => 'nullable',
+            'email'       => 'required|unique:spaces|max:255|email',
+        ]);
+
+        Space::create(request(['city_id', 'name', 'address', 'phoneNumber', 'logo', 'email']));
+
+        return redirect()->route('spaces.index');
     }
 
     /**
@@ -51,7 +62,7 @@ class SpaceController extends Controller
      */
     public function show(Space $space)
     {
-        //
+
     }
 
     /**
@@ -62,7 +73,8 @@ class SpaceController extends Controller
      */
     public function edit(Space $space)
     {
-        //
+        $cities = City::orderBy('country')->orderBy('name')->pluck('name', 'id');
+        return view('admin/spaces/create', compact('cities', 'space'));
     }
 
     /**
@@ -74,8 +86,18 @@ class SpaceController extends Controller
      */
     public function update(Request $request, Space $space)
     {
-        //
-    }
+        $this->validate(request(), [
+            'city_id'     => 'required|integer',
+            'name'        => 'required|unique:spaces,name,' . $space->id . '|max:255',
+            'address'     => 'nullable',
+            'phoneNumber' => 'nullable',
+            'logo'        => 'nullable',
+            'email'       => 'required|unique:spaces,email,' . $space->id . '|max:255|email',
+        ]);
+
+        $space->update(request(['city_id', 'name', 'address', 'phoneNumber', 'logo', 'email']));
+
+        return redirect()->route('spaces.index');    }
 
     /**
      * Remove the specified resource from storage.

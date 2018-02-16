@@ -15,7 +15,6 @@
               <div class="box-body">
                 <h4>@lang('admin.cities.saveNewCity')</h4>
                 {!! Form::open(['method' => 'POST', 'route' => 'cities.store', 'class' => 'form-vertical']) !!}
-                {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('newName') ? ' has-error' : '' }} col-sm-5">
                   {!! Form::text('newName', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => __('admin.cities.name')]) !!}
                   <small class="text-danger">{{ $errors->first('newName') }}</small>

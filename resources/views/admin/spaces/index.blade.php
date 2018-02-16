@@ -21,10 +21,9 @@
           </div>
           <div class="box-body">
                 @if (count($spaces))
-                <h4>@lang('admin.spaces.list')</h4>
                 <table class="table">
-                  <thead> 
-                      <tr> 
+                  <thead>
+                      <tr>
                           <th>@lang('admin.spaces.name')</th>
                           <th>@lang('admin.spaces.address')</th>
                           <th>@lang('admin.spaces.city')</th>
@@ -33,8 +32,6 @@
                       </tr>
                     </thead>
                     <tbody>
-      
-
 
                         @foreach ($spaces as $space)
                         <tr>
@@ -42,10 +39,10 @@
                             <td>{{ $space->address }}</td>
                             <td>{{ $space->city->name }}</td>
                             <td>{{ $space->email }}</td>
-                            <td><a href="index.php?a=43&amp;b=2&amp;idespace=1" class="btn btn-success btn-sm"  data-toggle='tooltip'  title="@lang('admin.spaces.modify')"><i class="fa fa-pencil-square-o"></i></a></td>
+                            <td><a href="/admin/spaces/{{ $space->id }}/edit" class="btn btn-success btn-sm"  data-toggle='tooltip'  title="@lang('admin.spaces.modify')"><i class="fa fa-pencil-square-o"></i></a></td>
                         </tr>
-
                         @endforeach
+
                     </tbody>
                 </table>
             @else

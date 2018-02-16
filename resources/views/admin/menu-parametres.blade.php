@@ -10,7 +10,7 @@
             <div class="box-body">
 
                 <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="/admin/cities"><i class="fa fa-cloud"></i> {{strtoupper (__('admin.cities.cities')) }}</a>
-                <a class="btn btn-app @if (Route::currentRouteName() == 'spaces.index' || Route::currentRouteName() == 'spaces.create') disabled @endif" href="/admin/spaces"><i class="fa fa-home"></i> {{strtoupper (__('admin.spaces.spaces')) }}</a>
+                <a class="btn btn-app @if (Route::currentRouteName() == 'spaces.index' || Route::currentRouteName() == 'spaces.create' || Route::currentRouteName() == 'spaces.edit') disabled @endif" href="/admin/spaces"><i class="fa fa-home"></i> {{strtoupper (__('admin.spaces.spaces')) }}</a>
                 <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="index.php?a=44"><i class="fa fa-square"></i> SALLES</a>
                 <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="index.php?a=42"><i class="fa fa-clock-o"></i> HORAIRES</a>
                 <a class="btn btn-app @if (Route::currentRouteName() == 'cities.index') disabled @endif" href="index.php?a=47"><i class="fa fa-eur"></i> TARIFS</a>
