@@ -16,36 +16,56 @@
           <div class="box-header">
             <h3 class="box-title">@lang('admin.spaces.listTitle')</h3>
             <div class="box-tools pull-right">
-              <a href="/admin/spaces/create" class="btn btn-primary btn-sm" data-toggle="tooltip" title="" data-original-title="@lang('admin.spaces.createSpace')"><i class="fa fa-plus"></i></a>
+              <a href="/admin/spaces/create" class="btn btn-primary btn-sm" data-toggle="tooltip" title="" data-original-title="@lang('admin.spaces.create')"><i class="fa fa-plus"></i></a>
             </div>
           </div>
           <div class="box-body">
-                @if (count($spaces))
-                <table class="table">
-                  <thead>
-                      <tr>
-                          <th>@lang('admin.spaces.name')</th>
-                          <th>@lang('admin.spaces.address')</th>
-                          <th>@lang('admin.spaces.city')</th>
-                          <th>@lang('admin.spaces.mail')</th>
-                          <th>&nbsp;</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+              @if (count($spaces))
+                  @foreach ($spaces as $space)
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="box box-primary">
+                                  <div class="box-header ">
+                                      <h3 class="box-title">{{ $space->name }} </h3>
+                                      <p>{{ $space->address }} - {{ $space->city->name }}
+                                          <br>{{ Html::mailto($space->email) }}
+                                      </p>
+                                      <div class="box-tools pull-right"><a href="/admin/spaces/{{ $space->id }}/edit" class="btn btn-success btn-sm"  data-toggle='tooltip'  title="@lang('admin.spaces.modify')"><i class="fa fa-pencil-square-o"></i></a></div>
+                                  </div>
 
-                        @foreach ($spaces as $space)
-                        <tr>
-                            <td>{{ $space->name }}</td>
-                            <td>{{ $space->address }}</td>
-                            <td>{{ $space->city->name }}</td>
-                            <td>{{ $space->email }}</td>
-                            <td><a href="/admin/spaces/{{ $space->id }}/edit" class="btn btn-success btn-sm"  data-toggle='tooltip'  title="@lang('admin.spaces.modify')"><i class="fa fa-pencil-square-o"></i></a></td>
-                        </tr>
-                        @endforeach
+                                  <div class="box-body">
+                                      <ul class="timeline">
+                                          <li class="time-label"><span class="bg-blue">Liste des salles</span></li>
+                                          @foreach ($space->rooms as $room)
+                                              <li class="">
+                                                  <i class="fa  fa-caret-square-o-right bg-aqua"></i>
+                                                  <div class="timeline-item">
+                                                      <div class="box box-solid box-info">
+                                                          <div class="box-header ">
+                                                              <h3 class="box-title">{{ $room->name }}</h3>
+                                                              <div class="box-tools pull-right"><a href="/admin/rooms/{{ $room->id }}/edit" class="btn btn-success btn-sm"  data-toggle='tooltip'  title="@lang('admin.rooms.modify')"><i class="fa fa-pencil-square-o"></i></a></div>
+                                                          </div>
+                                                          <div class="box-body">
+                                                              {{ $room->comment }}
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                          @endforeach
+                                          <li>
+                                              <a href="/admin/rooms/{{ $space->id }}/create" class="fa bg-blue"><i class="fa fa-plus"></i></a>
+                                              <div class="timeline-item">
+                                                  <h3 class="timeline-header"><a href="/admin/rooms/{{ $space->id }}/create">Ajouter une salle</a></h3>
+                                              </div>
+                                          </li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  @endforeach
 
-                    </tbody>
-                </table>
-            @else
+              @else
                 <div class="alert alert-info alert-dismissable">
                   <i class="fa fa-info"></i><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>&nbsp;<b>@lang('admin.spaces.noSpacesYet')</b>
                 </div>

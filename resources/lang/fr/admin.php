@@ -35,5 +35,16 @@ return [
     'spaces.create'      => 'Créer un espace',
     'spaces.cancel'      => 'Annuler',
     'spaces.modify'      => 'Modifier l\'espace',
-    'spaces.phone'       => 'Téléphone'
+    'spaces.phone'       => 'Téléphone',
+
+    //rooms
+    'rooms.rooms'        => 'Salles',
+    'rooms.title'        => 'Gestion des salles',
+    'rooms.create'       => 'Créer une salle',
+    'rooms.name'         => 'Nom de la salle',
+    'rooms.comment'      => 'Commentaire',
+    'rooms.cancel'       => 'Annuler',
+    'rooms.modify'       => 'Modifier la salle',
+    'rooms.space'        => 'Nom de l\'espace',
+
 ];

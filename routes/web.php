@@ -28,3 +28,10 @@ Route::get('admin/spaces/create', 'SpaceController@create')->name('spaces.create
 Route::post('admin/spaces', 'SpaceController@store')->name('spaces.store');
 Route::get('admin/spaces/{space}/edit', 'SpaceController@edit')->name('spaces.edit');
 Route::post('admin/spaces/{space}', 'SpaceController@update')->name('spaces.update');
+
+
+Route::get('admin/rooms', 'RoomController@index')->name('rooms.index');
+Route::get('admin/rooms/{space}/create', 'RoomController@create')->name('rooms.create');
+Route::post('admin/rooms', 'RoomController@store')->name('rooms.store');
+Route::get('admin/rooms/{room}/edit', 'RoomController@edit')->name('rooms.edit');
+Route::post('admin/rooms/{room}', 'RoomController@update')->name('rooms.update');

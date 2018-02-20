@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
                         'url'  => 'admin/spaces',
                         'icon' => 'home'
                     ],
-                    [
+                    /*[
                         'text' => __('admin.menu.rooms'),
                         'url'  => 'admin/rooms',
                         'icon' => 'square'
@@ -57,7 +57,7 @@ class AppServiceProvider extends ServiceProvider
                         'text' => 'Materiel',
                         'url'  => 'admin/materiels',
                         'icon' => 'desktop'
-                    ]
+                    ]*/
                 ]
             ]);
             $event->menu->add([

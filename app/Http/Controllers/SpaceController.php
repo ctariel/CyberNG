@@ -97,7 +97,8 @@ class SpaceController extends Controller
 
         $space->update(request(['city_id', 'name', 'address', 'phoneNumber', 'logo', 'email']));
 
-        return redirect()->route('spaces.index');    }
+        return redirect()->route('spaces.index');
+    }
 
     /**
      * Remove the specified resource from storage.

@@ -12,4 +12,8 @@ class Space extends Model
     public function city() {
         return $this->belongsTo(City::class);
     }
+
+    public function rooms() {
+        return $this->hasMany(Room::class);
+    }
 }
