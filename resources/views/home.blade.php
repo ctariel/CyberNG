@@ -8,4 +8,10 @@
 
 @section('content')
     <p>You are logged in!</p>
+    @role('admin')
+         I am an admin!
+         {{ \Auth::user()->getAllPermissions() }}
+    @else
+         I am nothing...
+    @endrole
 @stop

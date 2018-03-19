@@ -12,4 +12,8 @@ class Room extends Model
     public function space() {
         return $this->belongsTo(Space::class);
     }
+
+    public function hardware() {
+        return $this->hasMany(Hardware::class);
+    }
 }

@@ -13,6 +13,7 @@ class SpacesTableSeeder extends Seeder
     {
         //
         DB::table('spaces')->insert([
+            'id' => '1',
             'city_id' => '3',
             'name'    => 'Espace Public Numérique de Test',
             'address' => '2, avenue des Ordinateurs',
@@ -21,6 +22,7 @@ class SpacesTableSeeder extends Seeder
             'email' => 'epn@cyberng.oo'
         ]);
         DB::table('spaces')->insert([
+            'id' => '2',
             'city_id' => '2',
             'name'    => 'Médiathèque Municipale',
             'address' => '10, rue des plantes',
