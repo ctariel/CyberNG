@@ -10,6 +10,7 @@
     @include('admin/menu-parametres')
     <div class="row">
         <div class="col-sm-10">
+            @can('add city')
             <div class="box box-solid box-primary">
               <div class="box-header"><h3 class="box-title">@lang('admin.cities.addCity')</h3></div>
               <div class="box-body">
@@ -34,6 +35,7 @@
                 {!! Form::close() !!}
               </div>
             </div>
+        @endcan
 
             <div class="box box-solid box-warning">
                 <div class="box-header"><h3 class="box-title">@lang('admin.cities.listTitle')</h3></div>
@@ -58,8 +60,8 @@
                             <small class="text-danger">{{ $errors->first('country') }}</small>
                         </div>
                         <div class="form-group">
-                            {!! Form::button('<i class="fa fa-edit"></i>', ['type' => 'submit', 'class' => 'btn btn-success', 'data-toggle' => 'tooltip',  'title' => __('admin.cities.modifyCity')]) !!}
-                            <a href='/admin/cities/{{ $city->id }}/destroy' class='btn btn-danger' data-toggle='tooltip',  title='@lang('admin.cities.deleteCity')'><i class="fa fa-trash"></i></a>
+                            @can('modify city'){!! Form::button('<i class="fa fa-edit"></i>', ['type' => 'submit', 'class' => 'btn btn-success', 'data-toggle' => 'tooltip',  'title' => __('admin.cities.modifyCity')]) !!}@endcan
+                            @can('delete city')<a href='/admin/cities/{{ $city->id }}/destroy' class='btn btn-danger' data-toggle='tooltip',  title='@lang('admin.cities.deleteCity')'><i class="fa fa-trash"></i></a>@endcan
                         </div>
                         {!! Form::close() !!}
                     @endforeach
