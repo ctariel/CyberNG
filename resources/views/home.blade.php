@@ -9,9 +9,17 @@
 @section('content')
     <p>You are logged in!</p>
     @role('admin')
-         I am an admin!
+         I am an admin !
          {{ \Auth::user()->getAllPermissions() }}
     @else
-         I am nothing...
+        @role('anim')
+            I am an anim !
+         {{ \Auth::user()->getAllPermissions() }}
+        @else
+            @role('user')
+             I am an user !
+            {{ \Auth::user()->getAllPermissions() }}
+            @endrole
+        @endrole
     @endrole
 @stop

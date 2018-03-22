@@ -3,6 +3,7 @@
 return [
     // menu
     'menu.home'          => 'Accueil',
+    'menu.hello'         => 'Bonjour,',
     'menu.configuration' => 'Configuration',
     'menu.cities'        => 'Villes',
     'menu.spaces'        => 'Espaces',
