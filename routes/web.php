@@ -35,3 +35,5 @@ Route::get('admin/rooms/{space}/create', 'RoomController@create')->name('rooms.c
 Route::post('admin/rooms', 'RoomController@store')->name('rooms.store');
 Route::get('admin/rooms/{room}/edit', 'RoomController@edit')->name('rooms.edit');
 Route::post('admin/rooms/{room}', 'RoomController@update')->name('rooms.update');
+
+Route::get('admin/hardware', 'HardwareController@index')->name('hardware.index');

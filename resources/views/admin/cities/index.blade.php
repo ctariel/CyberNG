@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-    @include('admin/menu-parametres')
     <div class="row">
         <div class="col-sm-10">
             @can('add city')

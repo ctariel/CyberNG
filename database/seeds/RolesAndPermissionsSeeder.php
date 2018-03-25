@@ -36,8 +36,9 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'add hardware']);
         Permission::create(['name' => 'modify hardware']);
         Permission::create(['name' => 'delete hardware']);
-
         Permission::create(['name' => 'affect hardware']);
+        Permission::create(['name' => 'manage hardware']);
+        
         // create roles and assign created permissions
 
         $role = Role::create(['name' => 'user']);

@@ -8,6 +8,7 @@ return [
     'menu.cities'        => 'Villes',
     'menu.spaces'        => 'Espaces',
     'menu.rooms'         => 'Salles',
+    'menu.hardware'      => 'Matériel',
 
     //cities
     'cities.title'       => 'Gestion des villes',
@@ -47,5 +48,8 @@ return [
     'rooms.cancel'       => 'Annuler',
     'rooms.modify'       => 'Modifier la salle',
     'rooms.space'        => 'Nom de l\'espace',
+
+    //hardware
+    'hardware.title'     => 'Matériel',
 
 ];
