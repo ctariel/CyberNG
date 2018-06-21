@@ -8,7 +8,7 @@
 
 
 @section('content')
-    @include('admin/menu-parametres')
+    {{-- @include('admin/menu-parametres') --}}
     <div class="row">
         <div class="col-sm-6">
             <div class="box box-solid box-primary">

@@ -7,17 +7,9 @@
 @endsection
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-10">
-        </div>
-    </div>
+
 @endsection
 
 @section('js')
-<script>
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-</script>
 
 @endsection

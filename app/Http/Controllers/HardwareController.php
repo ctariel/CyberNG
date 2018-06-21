@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Hardware;
+use App\Room;
 use Illuminate\Http\Request;
 
 class HardwareController extends Controller
@@ -15,9 +16,8 @@ class HardwareController extends Controller
     public function index()
     {
         //
-        $hardware = Hardware::all();
-
-        return view('admin/hardware/index', compact('hardware'));
+        $rooms = Room::all();
+        return view('admin/hardware/index', compact('rooms'));
     }
 
     /**
@@ -25,9 +25,10 @@ class HardwareController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Room $room)
     {
         //
+        return view('admin/hardware/create', compact('room'));
     }
 
     /**

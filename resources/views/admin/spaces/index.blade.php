@@ -29,7 +29,7 @@
 
                               <div class="box-body">
                                   <ul class="timeline">
-                                      <li class="time-label"><span class="bg-blue">Liste des salles</span></li>
+                                      <li class="time-label"><span class="bg-blue">@lang('admin.rooms.list')</span></li>
                                       @foreach ($space->rooms as $room)
                                           <li class="">
                                               <i class="fa  fa-caret-square-o-right bg-aqua"></i>
@@ -41,6 +41,33 @@
                                                       </div>
                                                       <div class="box-body">
                                                           {{ $room->comment }}
+                                                          @if (count($room->hardwares))
+                                                          <table class="table">
+                                                              <thead><tr>
+                                                                      <th>Nom</th><th>OS</th><th>Salle</th><th>Commentaires</th><th>&nbsp;</th><th>&nbsp;</th>
+                                                                  </tr></thead>
+                                                              <tbody>
+                                                                  @foreach ($room->hardwares as $hardware)
+                                                                      <tr>
+                                                                          <td></td>
+                                                                          <td></td>
+                                                                          <td></td>
+                                                                          <td></td>
+                                                                          <td><a href=""><button class="btn btn-success btn-sm"  type="submit" value="@lang('admin.hardware.modify')">@lang('admin.hardware.modify')</button></a></td>
+                                                                          <td><a href=""><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a></td>
+                                                                      </tr>
+                                                                  @endforeach
+                                                              </tbody>
+                                                          </table>
+                                                          @else
+                                                          <p>@lang('admin.hardware.noHardwareYet')</p>
+                                                          @endif
+                                                      </div>
+
+                                                      <div class="box-footer">
+                                                        <a href="/admin/rooms/{{ $room->id }}/hardware/create" class="btn btn-app bg-blue">
+                                                            <i class="fa fa-desktop"></i> @lang('admin.hardware.add')
+                                                        </a>
                                                       </div>
                                                   </div>
                                               </div>
@@ -49,7 +76,7 @@
                                       <li>
                                           <a href="/admin/rooms/{{ $space->id }}/create" class="fa bg-blue"><i class="fa fa-plus"></i></a>
                                           <div class="timeline-item">
-                                              <h3 class="timeline-header"><a href="/admin/rooms/{{ $space->id }}/create">Ajouter une salle</a></h3>
+                                              <h3 class="timeline-header"><a href="/admin/rooms/{{ $space->id }}/create">@lang('admin.rooms.add')</a></h3>
                                           </div>
                                       </li>
                                   </ul>
