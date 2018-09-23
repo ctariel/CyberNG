@@ -14,7 +14,7 @@
               @foreach ($spaces as $space)
                   <div class="row">
                       <div class="col-md-12">
-                          <div class="box box-primary collapsed-box">
+                          <div class="box box-primary">
                               <div class="box-header ">
                                   <h3 class="box-title">{{ $space->name }} </h3>
                                   <p>
@@ -23,7 +23,7 @@
                                   </p>
                                   <div class="box-tools pull-right">
                                       <a href="/admin/spaces/{{ $space->id }}/edit" class="btn btn-success btn-sm"  data-toggle='tooltip'  title="@lang('admin.spaces.modify')"><i class="fa fa-pencil-square-o"></i></a>
-                                      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
+                                      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                                   </div>
                               </div>
 
@@ -44,17 +44,20 @@
                                                           @if (count($room->hardwares))
                                                           <table class="table">
                                                               <thead><tr>
-                                                                      <th>Nom</th><th>OS</th><th>Salle</th><th>Commentaires</th><th>&nbsp;</th><th>&nbsp;</th>
+                                                                      <th>@lang('admin.hardware.name')</th>
+                                                                      <th>@lang('admin.hardware.IPAddress')</th>
+                                                                      <th>@lang('admin.hardware.MACAddress')</th>
+                                                                      <th>@lang('admin.hardware.comment')</th><th>&nbsp;</th><th>&nbsp;</th>
                                                                   </tr></thead>
                                                               <tbody>
                                                                   @foreach ($room->hardwares as $hardware)
                                                                       <tr>
-                                                                          <td></td>
-                                                                          <td></td>
-                                                                          <td></td>
-                                                                          <td></td>
-                                                                          <td><a href=""><button class="btn btn-success btn-sm"  type="submit" value="@lang('admin.hardware.modify')">@lang('admin.hardware.modify')</button></a></td>
-                                                                          <td><a href=""><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a></td>
+                                                                          <td>{{ $hardware->name }}</td>
+                                                                          <td>{{ $hardware->IPAddress }}</td>
+                                                                          <td>{{ $hardware->MACAddress }}</td>
+                                                                          <td>{{ $hardware->comment }}</td>
+                                                                          <td><a href="/admin/rooms/{{ $room->id }}/hardware/{{ $hardware->id }}/edit"><button class="btn btn-success btn-sm"  type="submit" value="@lang('admin.hardware.modify')">@lang('admin.hardware.modify')</button></a></td>
+                                                                          <td><a href="/admin/rooms/{{ $room->id }}/hardware/{{ $hardware->id }}/destroy"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button></a></td>
                                                                       </tr>
                                                                   @endforeach
                                                               </tbody>

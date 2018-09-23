@@ -26,7 +26,7 @@
                 <div class="box-body">
                     <?php //dd($space); ?>
                     @if( isset($hardware) )
-                        {!! Form::model($room, ['method' => 'POST', 'route' => array('hardware.update', $room->id, $hardware->id), 'class' => 'form-horizontal']) !!}
+                        {!! Form::model($hardware, ['method' => 'POST', 'route' => array('hardware.update', $room->id, $hardware->id), 'class' => 'form-horizontal']) !!}
                     @else
                         {!! Form::open(['method' => 'POST', 'route' => array('hardware.store', $room->id), 'class' => 'form-horizontal']) !!}
                     @endif
@@ -50,7 +50,7 @@
                     <div class="form-group{{ $errors->has('IPAddress') ? ' has-error' : '' }}">
                         {!! Form::label('IPAddress', __('admin.hardware.IPAddress'), ['class' => 'col-sm-3 control-label']) !!}
                         <div class="col-sm-9">
-                            {!! Form::text('IPAddress', old('IPAddress'), ['class' => 'form-control', 'required' => 'required']) !!}
+                            {!! Form::text('IPAddress', old('IPAddress'), ['class' => 'form-control']) !!}
                             <small class="text-danger">{{ $errors->first('IPAddress') }}</small>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     <div class="form-group{{ $errors->has('MACAddress') ? ' has-error' : '' }}">
                         {!! Form::label('MACAddress', __('admin.hardware.MACAddress'), ['class' => 'col-sm-3 control-label']) !!}
                         <div class="col-sm-9">
-                            {!! Form::text('MACAddress', old('MACAddress'), ['class' => 'form-control', 'required' => 'required']) !!}
+                            {!! Form::text('MACAddress', old('MACAddress'), ['class' => 'form-control']) !!}
                             <small class="text-danger">{{ $errors->first('MACAddress') }}</small>
                         </div>
                     </div>

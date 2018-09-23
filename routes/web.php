@@ -38,6 +38,7 @@ Route::post('admin/rooms/{room}', 'RoomController@update')->name('rooms.update')
 
 Route::get('admin/rooms/{room}/hardware', 'HardwareController@index')->name('hardware.index');
 Route::get('admin/rooms/{room}/hardware/create', 'HardwareController@create')->name('hardware.create');
-Route::post('admin/rooms{room}/hardware', 'HardwareController@store')->name('hardware.store');
+Route::post('admin/rooms/{room}/hardware', 'HardwareController@store')->name('hardware.store');
 Route::get('admin/rooms/{room}/hardware/{hardware}/edit', 'HardwareController@edit')->name('hardware.edit');
 Route::post('admin/rooms/{room}/hardware/{hardware}', 'HardwareController@update')->name('hardware.update');
+Route::get('admin/rooms/{room}/hardware/{hardware}/destroy', 'HardwareController@destroy')->name('hardware.destroy');

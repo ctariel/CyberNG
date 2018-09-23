@@ -40,6 +40,18 @@ class HardwareController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate(request(), [
+            'room_id'     => 'required|integer',
+            'name'        => 'required|max:255',
+            'IPAddress'   => 'nullable',
+            'MACAddress'  => 'nullable',
+            'comment'     => 'nullable',
+        ]);
+
+        Hardware::create(request(['room_id', 'name', 'IPAddress', 'MACAddress', 'comment']));
+
+        return redirect()->route('spaces.index');
+
     }
 
     /**
@@ -59,9 +71,10 @@ class HardwareController extends Controller
      * @param  \App\Hardware  $hardware
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hardware $hardware)
+    public function edit(Room $room, Hardware $hardware)
     {
         //
+        return view('admin/hardware/create', compact('room', 'hardware'));
     }
 
     /**
@@ -71,9 +84,21 @@ class HardwareController extends Controller
      * @param  \App\Hardware  $hardware
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hardware $hardware)
+    public function update(Request $request, Room $room, Hardware $hardware)
     {
         //
+        $this->validate(request(), [
+            'room_id'     => 'required|integer',
+            'name'        => 'required|max:255',
+            'IPAddress'   => 'nullable',
+            'MACAddress'  => 'nullable',
+            'comment'     => 'nullable',
+        ]);
+
+        $hardware->update(request(['room_id', 'name', 'IPAddress', 'MACAddress', 'comment']));
+
+        return redirect()->route('spaces.index');
+
     }
 
     /**
@@ -82,8 +107,9 @@ class HardwareController extends Controller
      * @param  \App\Hardware  $hardware
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hardware $hardware)
+    public function destroy(Room $room, Hardware $hardware)
     {
         //
+        $hardware->destroy();
     }
 }
