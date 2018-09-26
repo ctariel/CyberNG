@@ -38,6 +38,11 @@ class RolesAndPermissionsSeeder extends Seeder
         Permission::create(['name' => 'delete hardware']);
         Permission::create(['name' => 'affect hardware']);
         Permission::create(['name' => 'manage hardware']);
+
+        Permission::create(['name' => 'add user']);
+        Permission::create(['name' => 'modify user']);
+        Permission::create(['name' => 'delete user']);
+        Permission::create(['name' => 'manage users']);
         
         // create roles and assign created permissions
 
@@ -45,7 +50,16 @@ class RolesAndPermissionsSeeder extends Seeder
         // $role->givePermissionTo('edit articles');
 
         $role = Role::create(['name' => 'anim']);
-        $role->givePermissionTo(['add city', 'manage cities', 'manage spaces', 'add hardware', 'modify hardware', 'delete hardware']);
+        $role->givePermissionTo(['add city',
+                                'manage cities',
+                                'manage spaces',
+                                'add hardware',
+                                'modify hardware',
+                                'delete hardware',
+                                'manage users',
+                                'add user',
+                                'modify user',
+                                'delete user']);
 
         $role = Role::create(['name' => 'admin']);
         $role->givePermissionTo(Permission::all());

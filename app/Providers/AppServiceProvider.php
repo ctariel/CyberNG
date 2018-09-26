@@ -51,12 +51,7 @@ class AppServiceProvider extends ServiceProvider
                             'icon' => 'home',
                             'can'  => 'manage spaces',
                         ],
-                        [
-                            'text' => __('admin.menu.hardware'),
-                            'url'  => 'admin/hardware',
-                            'icon' => 'desktop',
-                            'can'  => 'manage hardware',
-                        ],
+
                         /*[
                             'text' => 'Horaires',
                             'url'  => 'admin/horaires',
@@ -75,7 +70,26 @@ class AppServiceProvider extends ServiceProvider
                     ]
                 ]);
             }
-
+            if ($user->hasAnyRole(['admin', 'anim'])) {
+                $event->menu->add([
+                    'text'    => __('admin.menu.users'),
+                    'icon'    => 'users',
+                    'submenu' => [
+                        [
+                            'text' => __('admin.menu.users.list'),
+                            'url'  => 'admin/users',
+                            'icon' => 'list',
+                            'can'  => 'manage users',
+                        ],
+                        [
+                            'text' => __('admin.menu.users.add'),
+                            'url'  => 'admin/users/create',
+                            'icon' => 'user-plus',
+                            'can'  => 'add user',
+                        ],
+                    ]
+                ]);
+            }                            
             $event->menu->add([
                 'text'       => 'Important',
                 'icon_color' => 'red',

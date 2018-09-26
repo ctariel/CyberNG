@@ -7,8 +7,9 @@ return [
     'menu.configuration'     => 'Configuration',
     'menu.cities'            => 'Villes',
     'menu.spaces'            => 'Espaces',
-    'menu.rooms'             => 'Salles',
-    'menu.hardware'          => 'Matériel',
+    'menu.users'             => 'Utilisateurs',
+    'menu.users.list'        => 'Liste des utilisateurs',
+    'menu.users.add'         => 'Ajouter un utilisateur',
 
     //cities
     'cities.title'           => 'Gestion des villes',
@@ -33,7 +34,7 @@ return [
     'spaces.address'         => 'Adresse',
     'spaces.city'            => 'Ville',
     'spaces.mail'            => 'Mail',
-    'spaces.noSpacesYet'     => 'Pas d\'espaces encore !',
+    'spaces.noSpacesYet'     => 'Pas encore d\'espaces !',
     'spaces.create'          => 'Créer un espace',
     'spaces.cancel'          => 'Annuler',
     'spaces.modify'          => 'Modifier l\'espace',
@@ -63,4 +64,14 @@ return [
     'hardware.comment'       => 'Commentaire',
     'hardware.MACAddress'    => 'Adresse MAC',
     'hardware.IPAddress'     => 'Adresse IP',
+
+    //users
+    'users.title'            => 'Gestion des utilisateurs',
+    'users.create'           => 'Créer un utilisateur',
+    'users.file'             => 'Fiche adhérent',
+    'users.surname'          => 'Nom',
+    'users.forename'         => 'Prénom',
+    'users.gender'           => 'Sexe',
+    'users.male'             => 'Homme',
+    'users.female'           => 'Femme',
 ];
